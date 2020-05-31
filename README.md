@@ -1,3 +1,3 @@
 # o_weather
 
-[Demo](demo.png)
+![Demo](./demo.png)
