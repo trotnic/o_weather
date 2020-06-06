@@ -10,11 +10,22 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol OApiDelegate;
+
+
 @interface OApi : NSObject
 
-
-+ (void)doThings;
+- (void)doThings;
+@property(nonatomic, weak) id <OApiDelegate> delegate;
 
 @end
+
+
+@protocol OApiDelegate <NSObject>
+
+- (void)net:(OApi *)api didReceiveData:(NSDictionary *)data;
+
+@end
+
 
 NS_ASSUME_NONNULL_END
