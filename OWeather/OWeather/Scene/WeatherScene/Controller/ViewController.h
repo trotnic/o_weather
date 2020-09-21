@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ForecastPresenter.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <ForecastPresenterDelegate>
 
+- (instancetype)initWithPresenter:(ForecastPresenter *)presenter;
 
 @end
 

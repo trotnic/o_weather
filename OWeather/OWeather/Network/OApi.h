@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WeatherForecast.h"
+#import "URLRequestConvertible.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,16 +17,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OApi : NSObject
 
-- (void)doThings;
 @property(nonatomic, weak) id <OApiDelegate> delegate;
+
+- (instancetype)initWithSession:(NSURLSession *)session;
+- (void)fetchDataOnRequest:(id<URLRequestConvertible>)request;
 
 @end
 
 
 @protocol OApiDelegate <NSObject>
-
-- (void)net:(OApi *)api didReceiveData:(NSDictionary *)data;
-
+- (void)net:(OApi *)api didReceiveForecast:(WeatherForecast *)forecast;
+- (void)net:(OApi *)api didEndWithError:(NSError *)error;
 @end
 
 

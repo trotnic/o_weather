@@ -1,8 +1,8 @@
 //
-//  WeatherCell.h
+//  UIImage+WeatherIcon.h
 //  OWeather
 //
-//  Created by Vladislav on 5/31/20.
+//  Created by Uladzislau Volchyk on 9/21/20.
 //  Copyright © 2020 Uladzislau Volchyk. All rights reserved.
 //
 
@@ -10,10 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WeatherCell : UIView
+@interface UIImage (WeatherIcon)
 
-- (instancetype)initWithIcon:(NSString *)icon day:(NSNumber *)dt temp:(NSNumber *)temp;
 + (UIImage *)weatherIcon:(NSString *)descriptor;
+
 @end
 
 NS_ASSUME_NONNULL_END

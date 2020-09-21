@@ -7,19 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B58C6352517FE4C00162C3C /* DayForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B58C6342517FE4C00162C3C /* DayForecast.m */; };
+		2B58C638251803CF00162C3C /* WeatherForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B58C637251803CF00162C3C /* WeatherForecast.m */; };
+		2B58C640251884F200162C3C /* APIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B58C63F251884F200162C3C /* APIRequest.m */; };
+		2B58C64325188C8900162C3C /* OOneCallRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B58C64225188C8900162C3C /* OOneCallRequest.m */; };
+		2B58C64E25189A9E00162C3C /* ForecastPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B58C64D25189A9E00162C3C /* ForecastPresenter.m */; };
+		2B58C6522518B4A500162C3C /* ForecastData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B58C6512518B4A500162C3C /* ForecastData.m */; };
+		2B58C6562518B82500162C3C /* UIImage+WeatherIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B58C6552518B82500162C3C /* UIImage+WeatherIcon.m */; };
+		2B58C65C251913A600162C3C /* LocationPickController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B58C65B251913A600162C3C /* LocationPickController.m */; };
+		2B58C65F251913FE00162C3C /* LocationPickPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B58C65E251913FE00162C3C /* LocationPickPresenter.m */; };
+		2B58C6642519143500162C3C /* LocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B58C6632519143500162C3C /* LocationService.m */; };
 		863833382482F3CE0008F059 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 863833372482F3CE0008F059 /* AppDelegate.m */; };
 		8638333B2482F3CE0008F059 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8638333A2482F3CE0008F059 /* SceneDelegate.m */; };
 		8638333E2482F3CE0008F059 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8638333D2482F3CE0008F059 /* ViewController.m */; };
-		863833412482F3CE0008F059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8638333F2482F3CE0008F059 /* Main.storyboard */; };
 		863833432482F3D00008F059 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 863833422482F3D00008F059 /* Assets.xcassets */; };
 		863833462482F3D00008F059 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863833442482F3D00008F059 /* LaunchScreen.storyboard */; };
 		863833492482F3D00008F059 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 863833482482F3D00008F059 /* main.m */; };
 		863833542482F4BB0008F059 /* OApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 863833532482F4BB0008F059 /* OApi.m */; };
-		863833582483AC1E0008F059 /* NTR-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 863833572483AC1E0008F059 /* NTR-Regular.ttf */; };
 		8638335C2483C6230008F059 /* WeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8638335B2483C6230008F059 /* WeatherCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B58C6332517FE4C00162C3C /* DayForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DayForecast.h; sourceTree = "<group>"; };
+		2B58C6342517FE4C00162C3C /* DayForecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DayForecast.m; sourceTree = "<group>"; };
+		2B58C636251803CF00162C3C /* WeatherForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherForecast.h; sourceTree = "<group>"; };
+		2B58C637251803CF00162C3C /* WeatherForecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherForecast.m; sourceTree = "<group>"; };
+		2B58C63E251884F200162C3C /* APIRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIRequest.h; sourceTree = "<group>"; };
+		2B58C63F251884F200162C3C /* APIRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIRequest.m; sourceTree = "<group>"; };
+		2B58C64125188C8900162C3C /* OOneCallRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OOneCallRequest.h; sourceTree = "<group>"; };
+		2B58C64225188C8900162C3C /* OOneCallRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OOneCallRequest.m; sourceTree = "<group>"; };
+		2B58C647251896AC00162C3C /* URLRequestConvertible.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLRequestConvertible.h; sourceTree = "<group>"; };
+		2B58C64C25189A9E00162C3C /* ForecastPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForecastPresenter.h; sourceTree = "<group>"; };
+		2B58C64D25189A9E00162C3C /* ForecastPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForecastPresenter.m; sourceTree = "<group>"; };
+		2B58C6502518B4A500162C3C /* ForecastData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForecastData.h; sourceTree = "<group>"; };
+		2B58C6512518B4A500162C3C /* ForecastData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForecastData.m; sourceTree = "<group>"; };
+		2B58C6542518B82500162C3C /* UIImage+WeatherIcon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+WeatherIcon.h"; sourceTree = "<group>"; };
+		2B58C6552518B82500162C3C /* UIImage+WeatherIcon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WeatherIcon.m"; sourceTree = "<group>"; };
+		2B58C65A251913A600162C3C /* LocationPickController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationPickController.h; sourceTree = "<group>"; };
+		2B58C65B251913A600162C3C /* LocationPickController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationPickController.m; sourceTree = "<group>"; };
+		2B58C65D251913FE00162C3C /* LocationPickPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationPickPresenter.h; sourceTree = "<group>"; };
+		2B58C65E251913FE00162C3C /* LocationPickPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationPickPresenter.m; sourceTree = "<group>"; };
+		2B58C6622519143500162C3C /* LocationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationService.h; sourceTree = "<group>"; };
+		2B58C6632519143500162C3C /* LocationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationService.m; sourceTree = "<group>"; };
 		863833332482F3CE0008F059 /* OWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		863833362482F3CE0008F059 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		863833372482F3CE0008F059 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -27,14 +56,12 @@
 		8638333A2482F3CE0008F059 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		8638333C2482F3CE0008F059 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8638333D2482F3CE0008F059 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		863833402482F3CE0008F059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		863833422482F3D00008F059 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		863833452482F3D00008F059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		863833472482F3D00008F059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		863833482482F3D00008F059 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		863833522482F4BB0008F059 /* OApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OApi.h; sourceTree = "<group>"; };
 		863833532482F4BB0008F059 /* OApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OApi.m; sourceTree = "<group>"; };
-		863833572483AC1E0008F059 /* NTR-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NTR-Regular.ttf"; sourceTree = "<group>"; };
 		8638335A2483C6230008F059 /* WeatherCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherCell.h; sourceTree = "<group>"; };
 		8638335B2483C6230008F059 /* WeatherCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -50,6 +77,160 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B58C6322517F3EE00162C3C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2B58C6332517FE4C00162C3C /* DayForecast.h */,
+				2B58C6342517FE4C00162C3C /* DayForecast.m */,
+				2B58C636251803CF00162C3C /* WeatherForecast.h */,
+				2B58C637251803CF00162C3C /* WeatherForecast.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2B58C6392518848100162C3C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2B58C63C251884AA00162C3C /* Responses */,
+				2B58C63B2518849B00162C3C /* Requests */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		2B58C63B2518849B00162C3C /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				2B58C64425188C8D00162C3C /* OneCall */,
+				2B58C63D251884DB00162C3C /* Base */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		2B58C63C251884AA00162C3C /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		2B58C63D251884DB00162C3C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2B58C63E251884F200162C3C /* APIRequest.h */,
+				2B58C63F251884F200162C3C /* APIRequest.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		2B58C64425188C8D00162C3C /* OneCall */ = {
+			isa = PBXGroup;
+			children = (
+				2B58C64125188C8900162C3C /* OOneCallRequest.h */,
+				2B58C64225188C8900162C3C /* OOneCallRequest.m */,
+			);
+			path = OneCall;
+			sourceTree = "<group>";
+		};
+		2B58C6452518962800162C3C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				2B58C647251896AC00162C3C /* URLRequestConvertible.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		2B58C6482518995900162C3C /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				2B58C6572519138400162C3C /* MapScene */,
+				2B58C6492518996300162C3C /* WeatherScene */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		2B58C6492518996300162C3C /* WeatherScene */ = {
+			isa = PBXGroup;
+			children = (
+				863833592483C60A0008F059 /* Views */,
+				2B58C64B2518997400162C3C /* Presenter */,
+				2B58C64A2518996E00162C3C /* Controller */,
+			);
+			path = WeatherScene;
+			sourceTree = "<group>";
+		};
+		2B58C64A2518996E00162C3C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8638333C2482F3CE0008F059 /* ViewController.h */,
+				8638333D2482F3CE0008F059 /* ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2B58C64B2518997400162C3C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2B58C64F2518B48B00162C3C /* ForecastData */,
+				2B58C64C25189A9E00162C3C /* ForecastPresenter.h */,
+				2B58C64D25189A9E00162C3C /* ForecastPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2B58C64F2518B48B00162C3C /* ForecastData */ = {
+			isa = PBXGroup;
+			children = (
+				2B58C6502518B4A500162C3C /* ForecastData.h */,
+				2B58C6512518B4A500162C3C /* ForecastData.m */,
+			);
+			path = ForecastData;
+			sourceTree = "<group>";
+		};
+		2B58C6532518B80900162C3C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				2B58C6542518B82500162C3C /* UIImage+WeatherIcon.h */,
+				2B58C6552518B82500162C3C /* UIImage+WeatherIcon.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		2B58C6572519138400162C3C /* MapScene */ = {
+			isa = PBXGroup;
+			children = (
+				2B58C6592519139100162C3C /* ViewController */,
+				2B58C6582519138A00162C3C /* Presenter */,
+			);
+			path = MapScene;
+			sourceTree = "<group>";
+		};
+		2B58C6582519138A00162C3C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2B58C65D251913FE00162C3C /* LocationPickPresenter.h */,
+				2B58C65E251913FE00162C3C /* LocationPickPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2B58C6592519139100162C3C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2B58C65A251913A600162C3C /* LocationPickController.h */,
+				2B58C65B251913A600162C3C /* LocationPickController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2B58C6612519142A00162C3C /* LocationService */ = {
+			isa = PBXGroup;
+			children = (
+				2B58C6622519143500162C3C /* LocationService.h */,
+				2B58C6632519143500162C3C /* LocationService.m */,
+			);
+			path = LocationService;
+			sourceTree = "<group>";
+		};
 		8638332A2482F3CE0008F059 = {
 			isa = PBXGroup;
 			children = (
@@ -69,11 +250,11 @@
 		863833352482F3CE0008F059 /* OWeather */ = {
 			isa = PBXGroup;
 			children = (
-				863833592483C60A0008F059 /* Views */,
-				863833562483AC020008F059 /* Fonts */,
-				863833552482FBB50008F059 /* Data */,
+				2B58C6612519142A00162C3C /* LocationService */,
+				2B58C6532518B80900162C3C /* Category */,
+				2B58C6482518995900162C3C /* Scene */,
+				2B58C6322517F3EE00162C3C /* Model */,
 				863833512482F4590008F059 /* Network */,
-				863833502482F3F00008F059 /* Controllers */,
 				863833472482F3D00008F059 /* Info.plist */,
 				8638334F2482F3DB0008F059 /* Support */,
 			);
@@ -87,7 +268,6 @@
 				863833372482F3CE0008F059 /* AppDelegate.m */,
 				863833392482F3CE0008F059 /* SceneDelegate.h */,
 				8638333A2482F3CE0008F059 /* SceneDelegate.m */,
-				8638333F2482F3CE0008F059 /* Main.storyboard */,
 				863833422482F3D00008F059 /* Assets.xcassets */,
 				863833442482F3D00008F059 /* LaunchScreen.storyboard */,
 				863833482482F3D00008F059 /* main.m */,
@@ -95,37 +275,15 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
-		863833502482F3F00008F059 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				8638333C2482F3CE0008F059 /* ViewController.h */,
-				8638333D2482F3CE0008F059 /* ViewController.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		863833512482F4590008F059 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				2B58C6452518962800162C3C /* Protocol */,
+				2B58C6392518848100162C3C /* API */,
 				863833522482F4BB0008F059 /* OApi.h */,
 				863833532482F4BB0008F059 /* OApi.m */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		863833552482FBB50008F059 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		863833562483AC020008F059 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				863833572483AC1E0008F059 /* NTR-Regular.ttf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		863833592483C60A0008F059 /* Views */ = {
@@ -196,8 +354,6 @@
 			files = (
 				863833462482F3D00008F059 /* LaunchScreen.storyboard in Resources */,
 				863833432482F3D00008F059 /* Assets.xcassets in Resources */,
-				863833582483AC1E0008F059 /* NTR-Regular.ttf in Resources */,
-				863833412482F3CE0008F059 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,24 +366,26 @@
 			files = (
 				863833542482F4BB0008F059 /* OApi.m in Sources */,
 				8638333E2482F3CE0008F059 /* ViewController.m in Sources */,
+				2B58C64325188C8900162C3C /* OOneCallRequest.m in Sources */,
 				863833382482F3CE0008F059 /* AppDelegate.m in Sources */,
+				2B58C638251803CF00162C3C /* WeatherForecast.m in Sources */,
+				2B58C64E25189A9E00162C3C /* ForecastPresenter.m in Sources */,
+				2B58C6642519143500162C3C /* LocationService.m in Sources */,
+				2B58C6562518B82500162C3C /* UIImage+WeatherIcon.m in Sources */,
+				2B58C6522518B4A500162C3C /* ForecastData.m in Sources */,
 				863833492482F3D00008F059 /* main.m in Sources */,
+				2B58C65C251913A600162C3C /* LocationPickController.m in Sources */,
+				2B58C640251884F200162C3C /* APIRequest.m in Sources */,
+				2B58C65F251913FE00162C3C /* LocationPickPresenter.m in Sources */,
 				8638335C2483C6230008F059 /* WeatherCell.m in Sources */,
 				8638333B2482F3CE0008F059 /* SceneDelegate.m in Sources */,
+				2B58C6352517FE4C00162C3C /* DayForecast.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8638333F2482F3CE0008F059 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				863833402482F3CE0008F059 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		863833442482F3D00008F059 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -356,6 +514,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7YP67DVLV3;
 				INFOPLIST_FILE = OWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -373,6 +532,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7YP67DVLV3;
 				INFOPLIST_FILE = OWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -9,44 +9,33 @@
 #import "OApi.h"
 
 @interface OApi ()
-
+@property (nonatomic, strong) NSURLSession *session;
 @end
 
 @implementation OApi
 
-- (void)doThings{
-    NSURL *url = [[NSURL alloc] initWithString:@"https://api.openweathermap.org/data/2.5/onecall?lat=53.89&lon=27.56&appid=4deaf71fdaab5745a431410719d42d5f&exclude=minutely,hourly"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:NSURLSessionConfiguration.defaultSessionConfiguration];
-    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: nil];
-        [self.delegate net:self didReceiveData:[self dictionaredData:jsonArray]];
-    }] resume];
+- (instancetype)init {
+    return [self initWithSession:NSURLSession.sharedSession];
 }
 
-- (NSDictionary *)dictionaredData:(NSArray *)jsonArray {
-    NSMutableDictionary *weatherData = [NSMutableDictionary new];
+- (instancetype)initWithSession:(NSURLSession *)session {
+    self = [super init];
+    if (self) {
+        _session = session;
+    }
+    return self;
+}
+
+- (void)fetchDataOnRequest:(id<URLRequestConvertible>)request {
     
-    NSMutableArray *dailyArray = [NSMutableArray new];
-    
-    [((NSMutableArray *) [jsonArray valueForKey:@"daily"]) enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [dailyArray addObject:@{
-            @"dt": [obj valueForKey:@"dt"],
-            @"temp": [obj valueForKeyPath:@"temp.day"],
-            @"icon": [[obj valueForKeyPath:@"weather.icon"] firstObject]
-        }];
-    }];
-    
-    [dailyArray removeObjectAtIndex:0];
-    
-    [weatherData setValue:[jsonArray valueForKey:@"timezone"] forKey:@"city"];
-    [weatherData setValue:[[jsonArray valueForKeyPath:@"current.weather.main"] firstObject] forKey:@"cur_weather"];
-    [weatherData setValue:[[jsonArray valueForKeyPath:@"current.weather.icon"] firstObject] forKey:@"icon"];
-    [weatherData setValue:[jsonArray valueForKeyPath:@"current.temp"] forKey:@"cur_temp"];
-    [weatherData setValue:dailyArray forKey:@"dailyArray"];
-    
-    return [weatherData copy];
+    [[self.session dataTaskWithRequest:request.request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error != nil) {
+            [self.delegate net:self didEndWithError:error];
+            return;
+        }
+        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: nil];
+        [self.delegate net:self didReceiveForecast:[[WeatherForecast alloc] initWithDictionary:dictionary]];
+    }] resume];
 }
 
 @end
