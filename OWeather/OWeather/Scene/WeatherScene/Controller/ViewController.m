@@ -70,6 +70,7 @@
     [self setupViews];
     self.view.backgroundColor = [UIColor colorWithRed:48.0/255.0f green:54.0/255.0f blue:68.0/255.0f alpha:1.0f];
     
+    [self.presenter fetchData];
     [self.spinner startAnimating];
 }
 
@@ -164,12 +165,11 @@
     self.locationButton.tintColor = mainColor;
     self.locationButton.hidden = YES;
     
-    [self.locationButton addTarget:self action:@selector(handleClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.locationButton addTarget:self action:@selector(handleLocationButtonTap:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)handleClick:(UIButton *)sender {
-    // TODO: Implement location picker
-    NSLog(@"In development...");
+- (void)handleLocationButtonTap:(UIButton *)sender {
+    [self.presenter locationButtonTap];
 }
 
 - (void)setupAttributesIn:(NSMutableAttributedString *)string

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LocationService : NSObject
 
 @property (nonatomic, weak) id<LocationServiceDelegate> delegate;
+
+- (void)updateLocationWithCoordinate:(CLLocationCoordinate2D)coordinate;
+- (void)fetchCurrentLocation;
 
 @end
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B20614A251C824A008DBA61 /* SceneCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B206149251C824A008DBA61 /* SceneCoordinator.m */; };
+		2B20614F251C9676008DBA61 /* LocalCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B20614E251C9676008DBA61 /* LocalCoordinate.m */; };
 		2B58C6352517FE4C00162C3C /* DayForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B58C6342517FE4C00162C3C /* DayForecast.m */; };
 		2B58C638251803CF00162C3C /* WeatherForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B58C637251803CF00162C3C /* WeatherForecast.m */; };
 		2B58C640251884F200162C3C /* APIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B58C63F251884F200162C3C /* APIRequest.m */; };
@@ -28,6 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B206148251C824A008DBA61 /* SceneCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneCoordinator.h; sourceTree = "<group>"; };
+		2B206149251C824A008DBA61 /* SceneCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneCoordinator.m; sourceTree = "<group>"; };
+		2B20614D251C9676008DBA61 /* Coordinate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coordinate.h; sourceTree = "<group>"; };
+		2B20614E251C9676008DBA61 /* LocalCoordinate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalCoordinate.m; sourceTree = "<group>"; };
 		2B58C6332517FE4C00162C3C /* DayForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DayForecast.h; sourceTree = "<group>"; };
 		2B58C6342517FE4C00162C3C /* DayForecast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DayForecast.m; sourceTree = "<group>"; };
 		2B58C636251803CF00162C3C /* WeatherForecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherForecast.h; sourceTree = "<group>"; };
@@ -77,6 +83,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B206147251C823D008DBA61 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				2B206148251C824A008DBA61 /* SceneCoordinator.h */,
+				2B206149251C824A008DBA61 /* SceneCoordinator.m */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		2B58C6322517F3EE00162C3C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +99,8 @@
 				2B58C6342517FE4C00162C3C /* DayForecast.m */,
 				2B58C636251803CF00162C3C /* WeatherForecast.h */,
 				2B58C637251803CF00162C3C /* WeatherForecast.m */,
+				2B20614D251C9676008DBA61 /* Coordinate.h */,
+				2B20614E251C9676008DBA61 /* LocalCoordinate.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -142,6 +159,7 @@
 		2B58C6482518995900162C3C /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				2B206147251C823D008DBA61 /* Coordinator */,
 				2B58C6572519138400162C3C /* MapScene */,
 				2B58C6492518996300162C3C /* WeatherScene */,
 			);
@@ -365,12 +383,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				863833542482F4BB0008F059 /* OApi.m in Sources */,
+				2B20614F251C9676008DBA61 /* LocalCoordinate.m in Sources */,
 				8638333E2482F3CE0008F059 /* ViewController.m in Sources */,
 				2B58C64325188C8900162C3C /* OOneCallRequest.m in Sources */,
 				863833382482F3CE0008F059 /* AppDelegate.m in Sources */,
 				2B58C638251803CF00162C3C /* WeatherForecast.m in Sources */,
 				2B58C64E25189A9E00162C3C /* ForecastPresenter.m in Sources */,
 				2B58C6642519143500162C3C /* LocationService.m in Sources */,
+				2B20614A251C824A008DBA61 /* SceneCoordinator.m in Sources */,
 				2B58C6562518B82500162C3C /* UIImage+WeatherIcon.m in Sources */,
 				2B58C6522518B4A500162C3C /* ForecastData.m in Sources */,
 				863833492482F3D00008F059 /* main.m in Sources */,

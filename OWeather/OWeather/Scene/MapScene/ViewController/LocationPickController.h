@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocationPickPresenter.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LocationPickController : UIViewController
+
+- (instancetype)initWithPresenter:(LocationPickPresenter *)presenter;
 
 @end
 

@@ -7,9 +7,11 @@
 //
 
 #import "SceneDelegate.h"
-#import "ViewController.h"
+#import "SceneCoordinator.h"
 
 @interface SceneDelegate ()
+
+@property (nonatomic, strong) SceneCoordinator *coordinator;
 
 @end
 
@@ -22,13 +24,8 @@
     UIWindowScene *windowScene = (UIWindowScene *)scene;
     if (windowScene != nil) {
         self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
-        
-        OApi *service = [OApi new];
-        ForecastPresenter *presenter = [[ForecastPresenter alloc] initWithService:service];
-        ViewController *controller = [[ViewController alloc] initWithPresenter:presenter];
-        
-        self.window.rootViewController = controller;
-        [self.window makeKeyAndVisible];
+        self.coordinator = [[SceneCoordinator alloc] initWithWindow:self.window];
+        [self.coordinator start];
     }
 }
 

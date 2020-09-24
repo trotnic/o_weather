@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SceneCoordinator.h"
+#import "LocationService.h"
 #import "ForecastData.h"
 #import "OApi.h"
 
@@ -23,7 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<ForecastPresenterDelegate> delegate;
 
-- (instancetype)initWithService:(OApi *)service;
+- (instancetype)initWithApi:(OApi *)apiService location:(LocationService *)locationService coordinator:(SceneCoordinator *)coordinator;
+- (void)fetchData;
+- (void)locationButtonTap;
 
 @end
 

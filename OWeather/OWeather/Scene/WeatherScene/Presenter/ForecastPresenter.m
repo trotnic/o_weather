@@ -8,26 +8,35 @@
 
 #import "ForecastPresenter.h"
 #import "OOneCallRequest.h"
-#import "LocationService.h"
 
 @interface ForecastPresenter () <LocationServiceDelegate>
 
-@property (nonatomic, strong) OApi *service;
+@property (nonatomic, strong) OApi *apiService;
 @property (nonatomic, strong) LocationService *locationService;
+@property (nonatomic, strong) SceneCoordinator *coordinator;
 
 @end
 
 @implementation ForecastPresenter
 
-- (instancetype)initWithService:(OApi *)service {
+- (instancetype)initWithApi:(OApi *)apiService location:(LocationService *)locationService coordinator:(SceneCoordinator *)coordinator {
     self = [super init];
     if (self) {
-        _service = service;
-        service.delegate = self;
-        _locationService = [LocationService new];
+        _apiService = apiService;
+        _apiService.delegate = self;
+        _locationService = locationService;
         _locationService.delegate = self;
+        _coordinator = coordinator;
     }
     return self;
+}
+
+- (void)fetchData {
+    [self.locationService fetchCurrentLocation];
+}
+
+- (void)locationButtonTap {
+    [self.coordinator showLocationPickScene];
 }
 
 - (void)net:(OApi *)api didReceiveForecast:(WeatherForecast *)forecast {
@@ -40,7 +49,7 @@
 }
 
 - (void)locationService:(LocationService *)service didReceiveLat:(double)lat lon:(double)lon {
-    [self.service fetchDataOnRequest:[OOneCallRequest requestWithLat:lat lon:lon]];
+    [self.apiService fetchDataOnRequest:[OOneCallRequest requestWithLat:lat lon:lon]];
 }
 
 @end
