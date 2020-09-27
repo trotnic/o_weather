@@ -11,7 +11,7 @@
 @interface WeatherForecast ()
 
 @property (nonatomic, copy, readwrite) NSString *timezone;
-@property (nonatomic, strong, readwrite) DayForecast *current;
+@property (nonatomic, strong, readwrite) CurrentDayForecast *current;
 @property (nonatomic, strong, readwrite) NSArray<DayForecast *> *daily;
 
 @end
@@ -24,11 +24,8 @@
     if (self) {
         _timezone = dictionary[@"timezone"];
         NSMutableArray<DayForecast *> *tmpDaily = [NSMutableArray new];
+        _current = [[CurrentDayForecast alloc] initWithDictionary:dictionary[@"current"]];
         for (NSDictionary *day in dictionary[@"daily"]) {
-            if(!_current) {
-                _current = [[DayForecast alloc] initWithDictionary:day];
-                continue;
-            }
             [tmpDaily addObject:[[DayForecast alloc] initWithDictionary:day]];
         }
         _daily = [tmpDaily copy];

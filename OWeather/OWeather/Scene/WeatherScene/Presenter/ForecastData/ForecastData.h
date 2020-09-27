@@ -14,8 +14,16 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ForecastData : NSObject
 
 - (instancetype)initWithWeather:(WeatherForecast *)weather;
-- (void)currentDay:(void(^)(NSString *city, NSString *icon, NSString *date, NSString *temperature))completion;
-- (void)enumerateOverDailyUsing:(void(^)(NSString *icon, NSString *date, NSString *temperature))completion;
+- (void)enumerateOverDailyUsing:(void(^)(NSString *icon, NSString *day, NSString *dayTemperature, NSString *nightTemperature))completion;
+
+- (NSString *)currentLocation;
+- (NSString *)currentIcon;
+- (NSString *)currentDay;
+- (NSString *)currentTemperature;
+- (NSString *)currentSunrise;
+- (NSString *)currentSunset;
+- (NSString *)currentHumidity;
+- (NSString *)currentWindSpeed;
 
 @end
 

@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol LocationServiceDelegate <NSObject>
 
 - (void)locationService:(LocationService *)service didReceiveLat:(double)lat lon:(double)lon;
+- (void)locationServiceDidReceiveError:(NSError *)error;
 
 @end
 

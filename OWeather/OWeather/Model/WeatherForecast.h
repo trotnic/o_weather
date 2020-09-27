@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "DayForecast.h"
+#import "CurrentDayForecast.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WeatherForecast : NSObject
 
 @property (nonatomic, copy, readonly) NSString *timezone;
-@property (nonatomic, strong, readonly) DayForecast *current;
+@property (nonatomic, strong, readonly) CurrentDayForecast *current;
 @property (nonatomic, strong, readonly) NSArray<DayForecast *> *daily;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;

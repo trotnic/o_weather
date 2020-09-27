@@ -11,7 +11,7 @@
 @implementation APIRequest
 
 - (NSString *)scheme {
-    return @"HTTPS";
+    return @"HTTP";
 }
 
 - (NSString *)host {
@@ -31,7 +31,7 @@
 }
 
 - (NSArray<NSURLQueryItem *> *)queryParameters {
-    return nil;
+    return @[];
 }
 
 - (NSString *)requestType {
@@ -43,7 +43,7 @@
 }
 
 - (NSArray<NSDictionary<NSString *,NSString *> *> *)headers {
-    return nil;
+    return @[];
 }
 
 - (NSData *)body {

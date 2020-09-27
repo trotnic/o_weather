@@ -10,6 +10,8 @@
 #import <MapKit/MapKit.h>
 #import "Coordinate.h"
 
+static NSString * const coordinateKey = @"currentCoordinate";
+
 @interface LocationService () <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
@@ -30,15 +32,17 @@
 }
 
 - (void)fetchCurrentLocation {
-    NSData *currentLocation = [NSUserDefaults.standardUserDefaults dataForKey:@"currentCoordinate"];
+    NSData *currentLocation = [NSUserDefaults.standardUserDefaults dataForKey:coordinateKey];
     if (currentLocation) {
         NSError *error = nil;
         
         Coordinate *coordinate = [NSKeyedUnarchiver unarchivedObjectOfClass:Coordinate.self fromData:currentLocation error:&error];
         
         if (error) {
-            // TODO: Error handling
+            [self.delegate locationServiceDidReceiveError:error];
+            return;
         }
+        
         [self.delegate locationService:self didReceiveLat:coordinate.latitude.doubleValue lon:coordinate.longitude.doubleValue];
         return;
     }
@@ -48,16 +52,13 @@
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     switch (status) {
         case kCLAuthorizationStatusDenied:
-            NSLog(@"CL Authorization Denied");
-            return;
-        case kCLAuthorizationStatusRestricted:
-            NSLog(@"CL Authorization Restricted");
-            return;
-//        case kCLAuthorizationStatusNotDetermined:
-//        case kCLAuthorizationStatusAuthorizedAlways:
-//        case kCLAuthorizationStatusAuthorizedWhenInUse:
-            
-//            [self.locationManager startUpdatingLocation];
+        case kCLAuthorizationStatusRestricted: {
+            NSString *domain = @"com.uvolchyk.OWeather.ErrorDomain";
+            NSString *desc = @"Unable to get location, try allow this app to interact with your location in the settings";
+            NSDictionary *userInfo = @{ NSLocalizedDescriptionKey : desc };
+            NSError *error = [NSError errorWithDomain:domain code:-101 userInfo:userInfo];
+            [self.delegate locationServiceDidReceiveError:error];
+        }
         default:
             break;
     }
@@ -72,7 +73,7 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    // TODO: Error handling
+    [self.delegate locationServiceDidReceiveError:error];
 }
 
 - (void)updateLocationWithCoordinate:(CLLocationCoordinate2D)coordinate {
@@ -84,8 +85,13 @@
     Coordinate *coordinateToStore = [[Coordinate alloc] initWithLat:lat lon:lon];
     NSError *error = nil;
     NSData *rawCoordinate = [NSKeyedArchiver archivedDataWithRootObject:coordinateToStore requiringSecureCoding:NO error:&error];
-    // TODO: Error handling
-    [NSUserDefaults.standardUserDefaults setValue:rawCoordinate forKey:@"currentCoordinate"];
+    
+    if (error) {
+        [self.delegate locationServiceDidReceiveError:error];
+        return;
+    }
+    
+    [NSUserDefaults.standardUserDefaults setValue:rawCoordinate forKey:coordinateKey];
 }
 
 @end

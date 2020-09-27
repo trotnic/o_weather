@@ -26,18 +26,21 @@
     return self;
 }
 
-- (void)observePoint:(MKPointAnnotation *)point {
+- (void)observePoint:(MKPointAnnotation *)point
+{
     self.currentPoint = point;
 }
 
-- (void)cancelButtonTap:(void (^)(void))completion {
+- (void)cancelButtonTap:(void (^)(void))completion
+{
     
     if (completion) {
         completion();
     }
 }
 
-- (void)confirmButtonTap:(void (^)(void))completion {
+- (void)confirmButtonTap:(void (^)(void))completion
+{
     [self.service updateLocationWithCoordinate:self.currentPoint.coordinate];
     if(completion) {
         completion();

@@ -19,7 +19,10 @@
 
 @implementation ForecastPresenter
 
-- (instancetype)initWithApi:(OApi *)apiService location:(LocationService *)locationService coordinator:(SceneCoordinator *)coordinator {
+- (instancetype)initWithApi:(OApi *)apiService
+                   location:(LocationService *)locationService
+                coordinator:(SceneCoordinator *)coordinator
+{
     self = [super init];
     if (self) {
         _apiService = apiService;
@@ -31,25 +34,41 @@
     return self;
 }
 
-- (void)fetchData {
+// MARK: View Controller
+
+- (void)fetchData
+{
     [self.locationService fetchCurrentLocation];
 }
 
-- (void)locationButtonTap {
+- (void)locationButtonTap
+{
     [self.coordinator showLocationPickScene];
 }
 
-- (void)net:(OApi *)api didReceiveForecast:(WeatherForecast *)forecast {
+// MARK: Api delegate
+
+- (void)net:(OApi *)api didReceiveForecast:(WeatherForecast *)forecast
+{
     ForecastData *data = [[ForecastData alloc] initWithWeather:forecast];
     [self.delegate updateWithData:data];
 }
 
-- (void)net:(OApi *)api didEndWithError:(NSError *)error {
+- (void)net:(OApi *)api didEndWithError:(NSError *)error
+{
     [self.delegate showError:error];
 }
 
-- (void)locationService:(LocationService *)service didReceiveLat:(double)lat lon:(double)lon {
+// MARK: Location delegate
+
+- (void)locationService:(LocationService *)service didReceiveLat:(double)lat lon:(double)lon
+{
     [self.apiService fetchDataOnRequest:[OOneCallRequest requestWithLat:lat lon:lon]];
+}
+
+- (void)locationServiceDidReceiveError:(NSError *)error
+{
+    [self.delegate showError:error];
 }
 
 @end

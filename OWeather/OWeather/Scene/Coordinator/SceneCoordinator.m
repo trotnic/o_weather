@@ -11,6 +11,7 @@
 #import "LocationService.h"
 #import "ViewController.h"
 #import "LocationPickController.h"
+#import "WeatherViewController.h"
 
 @interface SceneCoordinator ()
 
@@ -34,7 +35,9 @@
     OApi *apiService = [OApi new];
     self.locationService = [LocationService new];
     ForecastPresenter *presenter = [[ForecastPresenter alloc] initWithApi:apiService location:self.locationService coordinator:self];
-    ViewController *controller = [[ViewController alloc] initWithPresenter:presenter];
+
+    WeatherViewController *controller = [[WeatherViewController alloc] initWithNibName:@"WeatherViewController" bundle:nil];
+    [controller bindPresenter:presenter];
     
     self.window.rootViewController = controller;
     [self.window makeKeyAndVisible];

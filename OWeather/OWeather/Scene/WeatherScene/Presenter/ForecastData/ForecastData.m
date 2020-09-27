@@ -11,7 +11,8 @@
 @interface ForecastData ()
 
 @property (nonatomic, strong) WeatherForecast *weather;
-@property (nonatomic, strong) NSDateFormatter *formatter;
+@property (nonatomic, strong) NSDateFormatter *dayFormatter;
+@property (nonatomic, strong) NSDateFormatter *timeFormatter;
 
 @end
 
@@ -26,29 +27,62 @@
     return self;
 }
 
-- (void)currentDay:(void(^)(NSString *city, NSString *icon, NSString *date, NSString *temperature))completion {
-    DayForecast *currentDay = self.weather.current;
-    NSString *dayTemperature = [NSString stringWithFormat:@"%uo", currentDay.tempDay.intValue - 273];
-    if(completion) {
-        completion(self.weather.timezone, currentDay.icon, [self.formatter stringFromDate:currentDay.date], dayTemperature);
-    }
+- (NSString *)currentLocation {
+    return  self.weather.timezone;
 }
 
-- (void)enumerateOverDailyUsing:(void(^)(NSString *icon, NSString *date, NSString *temperature))completion {
+- (NSString *)currentIcon {
+    return self.weather.current.icon;
+}
+
+- (NSString *)currentDay {
+    return [self.dayFormatter stringFromDate:self.weather.current.date];
+}
+
+- (NSString *)currentTemperature {
+    return [NSString stringWithFormat:@"%u", self.weather.current.temp.intValue];
+}
+
+- (NSString *)currentSunrise {
+    return [self.timeFormatter stringFromDate:self.weather.current.sunrise];
+}
+
+- (NSString *)currentSunset {
+    return [self.timeFormatter stringFromDate:self.weather.current.sunset];
+}
+
+- (NSString *)currentHumidity {
+    return [NSString stringWithFormat:@"%u %%", self.weather.current.humidity.intValue];
+}
+
+- (NSString *)currentWindSpeed {
+    return [NSString stringWithFormat:@"%u m/s", self.weather.current.windSpeed.intValue];
+}
+
+- (void)enumerateOverDailyUsing:(void(^)(NSString *icon, NSString *day, NSString *dayTemperature, NSString *nightTemperature))completion {
     
     [self.weather.daily enumerateObjectsUsingBlock:^(DayForecast *obj, NSUInteger idx, BOOL *stop) {
-        NSString *resultTemperature = [NSString stringWithFormat:@"%d", obj.tempDay.intValue - 273];
-        NSString *resultDate = [self.formatter stringFromDate:obj.date];
-        completion(obj.icon, resultDate, resultTemperature);
+        NSString *resultDayTemp = [NSString stringWithFormat:@"%u", obj.tempDay.intValue];
+        NSString *resultNightTemp = [NSString stringWithFormat:@"%u", obj.tempNight.intValue];
+        NSString *resultDay = [self.dayFormatter stringFromDate:obj.date];
+        completion(obj.icon, resultDay, resultDayTemp, resultNightTemp);
     }];
 }
 
-- (NSDateFormatter *)formatter {
-    if(!_formatter) {
-        _formatter = [NSDateFormatter new];
-        _formatter.dateFormat = @"EE";
+- (NSDateFormatter *)timeFormatter {
+    if(!_timeFormatter) {
+        _timeFormatter = [NSDateFormatter new];
+        _timeFormatter.dateFormat = @"HH:MM";
     }
-    return _formatter;
+    return _timeFormatter;
+}
+
+- (NSDateFormatter *)dayFormatter {
+    if(!_dayFormatter) {
+        _dayFormatter = [NSDateFormatter new];
+        _dayFormatter.dateFormat = @"EE";
+    }
+    return _dayFormatter;
 }
 
 @end
