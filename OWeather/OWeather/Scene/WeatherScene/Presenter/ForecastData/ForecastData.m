@@ -40,7 +40,7 @@
 }
 
 - (NSString *)currentTemperature {
-    return [NSString stringWithFormat:@"%u", self.weather.current.temp.intValue];
+    return [NSString stringWithFormat:@"%u°", self.weather.current.temp.intValue];
 }
 
 - (NSString *)currentSunrise {
@@ -62,8 +62,8 @@
 - (void)enumerateOverDailyUsing:(void(^)(NSString *icon, NSString *day, NSString *dayTemperature, NSString *nightTemperature))completion {
     
     [self.weather.daily enumerateObjectsUsingBlock:^(DayForecast *obj, NSUInteger idx, BOOL *stop) {
-        NSString *resultDayTemp = [NSString stringWithFormat:@"%u", obj.tempDay.intValue];
-        NSString *resultNightTemp = [NSString stringWithFormat:@"%u", obj.tempNight.intValue];
+        NSString *resultDayTemp = [NSString stringWithFormat:@"%u°", obj.tempDay.intValue];
+        NSString *resultNightTemp = [NSString stringWithFormat:@"%u°", obj.tempNight.intValue];
         NSString *resultDay = [self.dayFormatter stringFromDate:obj.date];
         completion(obj.icon, resultDay, resultDayTemp, resultNightTemp);
     }];

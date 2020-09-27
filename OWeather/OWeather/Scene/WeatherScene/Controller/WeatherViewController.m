@@ -7,7 +7,6 @@
 //
 
 #import "WeatherViewController.h"
-#import "WeatherCell.h"
 #import "WeatherDailyView.h"
 #import "UIImage+WeatherIcon.h"
 
@@ -90,7 +89,7 @@
     });
 }
 
-- (IBAction)locationButtonTap:(UIButton *)sender {
+- (IBAction)locationButtonTap:(UIButton *)sender {    
     [self.presenter locationButtonTap];
 }
 
@@ -99,7 +98,6 @@
         [UIView animateWithDuration:0.2 animations:^{
             self.stkCurrent.alpha = 0;
             self.stkDaily.alpha = 0;
-            
         }];
         [self.activityIndicator startAnimating];
         

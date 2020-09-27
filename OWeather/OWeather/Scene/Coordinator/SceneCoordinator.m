@@ -9,7 +9,6 @@
 #import "SceneCoordinator.h"
 #import "OApi.h"
 #import "LocationService.h"
-#import "ViewController.h"
 #import "LocationPickController.h"
 #import "WeatherViewController.h"
 

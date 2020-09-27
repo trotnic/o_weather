@@ -11,7 +11,7 @@
 @implementation APIRequest
 
 - (NSString *)scheme {
-    return @"HTTP";
+    return @"HTTPS";
 }
 
 - (NSString *)host {
